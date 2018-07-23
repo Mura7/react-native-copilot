@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import I18n from 'react-native-i18n'
 
 import Button from './Button';
 
@@ -33,24 +34,24 @@ const Tooltip = ({
       {
         !isLastStep ?
           <TouchableOpacity onPress={handleStop}>
-            <Button>Skip</Button>
+            <Button>{I18n.t('skip')}</Button>
           </TouchableOpacity>
           : null
       }
       {
         !isFirstStep ?
           <TouchableOpacity onPress={handlePrev}>
-            <Button>Previous</Button>
+            <Button>{I18n.t('previous')}</Button>
           </TouchableOpacity>
           : null
       }
       {
         !isLastStep ?
           <TouchableOpacity onPress={handleNext}>
-            <Button>Next</Button>
+            <Button>{I18n.t('next')}</Button>
           </TouchableOpacity> :
           <TouchableOpacity onPress={handleStop}>
-            <Button>Finish</Button>
+            <Button>{I18n.t('finish')}</Button>
           </TouchableOpacity>
       }
     </View>
